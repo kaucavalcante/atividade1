@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/CSS/me.css" />
+  </head>
+  <body>
+    <div class="portfolio-container">
+      <header class="top-header">
+        <div class="header-bar"></div>
+        <div class="logo-container"></div>
+        <button class="close-button">
+          <svg
+            width="33"
+            height="33"
+            viewBox="0 0 33 33"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.92739 0L0 5.92739L3.02675 8.95414L10.5096 16.5631L3.02675 24.0459L0 26.9465L5.92739 33L8.95414 29.9732L16.5631 22.3643L24.0459 29.9732L26.9465 33L33 26.9465L29.9732 24.0459L22.3643 16.5631L29.9732 8.95414L33 5.92739L26.9465 0L24.0459 3.02675L16.5631 10.5096L8.95414 3.02675L5.92739 0Z"
+              fill="white"
+              fill-opacity="0.8"
+            ></path>
+          </svg>
+        </button>
+      </header>
+
+      <main class="main-content">
+        <article class="profile-content">
+          <p class="bio-text">
+            Oi! Me chamo Kauane, tenho 19 anos e comecei no mundo de websites no
+            Wix, por causa do meu amor por The Sims, criando sites e canais para
+            divulgar conteúdo personalizado. Desde então, nunca mais parei. Hoje,
+            trabalho como aprendiz de treinamento na Funcional Health Tech.
+          </p>
+
+          <figure class="banner-container">
+            <img
+              src="/Images/Group 29.png"
+              alt="Profile Banner"
+              class="banner-image"
+            />
+          </figure>
+
+          <p class="bio-text-secondary">
+            Sou apaixonada por criar e me considero uma amante da arte, busco
+            sempre conhecer estéticas e técnicas novas. Almejo muito o
+            conhecimento e vejo essa atividade como uma ótima oportunidade.
+          </p>
+
+          <section class="folders-grid">
+            <div class="folder-card">
+              <div class="folder-header">
+                <span class="folder-icon">📁</span>
+                <h3 class="folder-title">Meus Projetos</h3>
+              </div>
+              <ul class="folder-list">
+                <li class="folder-item">
+                  <span class="item-dot"></span>Viajar o Mundo
+                </li>
+                <li class="folder-item">
+                  <span class="item-dot"></span>Me Formar
+                </li>
+                <li class="folder-item">
+                  <span class="item-dot"></span>Arte Digital
+                </li>
+                <li class="folder-item">
+                  <span class="item-dot"></span>Designs
+                </li>
+              </ul>
+            </div>
+
+            <div class="folder-card">
+              <div class="folder-header">
+                <span class="folder-icon">⭐</span>
+                <h3 class="folder-title">Habilidades</h3>
+              </div>
+              <ul class="folder-list">
+                <li class="folder-item">
+                  <span class="item-dot"></span>Web Design
+                </li>
+                <li class="folder-item"><span class="item-dot"></span>UI/UX</li>
+                <li class="folder-item">
+                  <span class="item-dot"></span>Criatividade
+                </li>
+                <li class="folder-item">
+                  <span class="item-dot"></span>Photoshop
+                </li>
+              </ul>
+            </div>
+
+            <div class="folder-card">
+              <div class="folder-header">
+                <span class="folder-icon">💖</span>
+                <h3 class="folder-title">Interesses</h3>
+              </div>
+              <ul class="folder-list">
+                <li class="folder-item"><span class="item-dot"></span>Games</li>
+                <li class="folder-item"><span class="item-dot"></span>Arte</li>
+                <li class="folder-item">
+                  <span class="item-dot"></span>Design
+                </li>
+                <li class="folder-item">
+                  <span class="item-dot"></span>Tecnologia
+                </li>
+              </ul>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <footer class="bottom-footer">
+        <div class="menu-icon">
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+          <div class="menu-line"></div>
+        </div>
+        <p class="time-display" id="timeDisplay"></p>
+      </footer>
+    </div>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        const day = days[now.getDay()];
+        const date = String(now.getDate()).padStart(2, "0");
+        const month = String(now.getMonth() + 1).padStart(2, "0");
+        const year = now.getFullYear();
+
+        document.getElementById("timeDisplay").innerHTML =
+          `${hours}:${minutes}:${seconds}<br>${day}, ${month}/${date}/${year}`;
+      }
+
+      updateTime();
+      setInterval(updateTime, 1000);
+
+      document.querySelectorAll(".folder-item").forEach((item) => {
+        item.addEventListener("click", function () {
+          document.querySelectorAll(".folder-item").forEach((i) => {
+            i.style.transform = "none";
+          });
+          this.style.transform = "scale(1.02)";
+        });
+      });
+
+      document
+        .querySelector(".close-button")
+        .addEventListener("click", function () {
+          window.location.href = "page.html";
+        });
+    </script>
+  </body>
+</html>

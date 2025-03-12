@@ -1,0 +1,143 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  background-color: #c0b1d0;
+  max-width: 100vw;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 40px;
+  height: calc(100vh - 57px);
+}
+
+.main-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #34114c;
+}
+
+/* Navigation Cards */
+.navigation-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-header {
+  width: 180px;
+  height: 140px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card-link:hover .card-header {
+  transform: translateY(-5px);
+}
+
+.card-tab {
+  position: absolute;
+  top: 0;
+  width: 180px;
+  height: 30px;
+  border-radius: 12px;
+  border: 2px solid #34114c;
+}
+
+.card-body {
+  position: absolute;
+  top: 15px;
+  width: 180px;
+  height: 125px;
+  border-radius: 12px;
+  border: 2px solid #34114c;
+  box-shadow: 4px 4px 0px #34114c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card Variants */
+.card-about .card-tab,
+.card-about .card-body {
+  background-color: #ffb6e6;
+}
+
+.card-experience .card-tab,
+.card-experience .card-body {
+  background-color: #b19cd9;
+}
+
+.card-icon {
+  font-size: 40px;
+}
+
+.card-label {
+  font-size: 24px;
+  color: #34114c;
+  font-weight: 700;
+  background-color: #ffffff;
+  padding: 5px 15px;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.page-footer {
+  width: 100%;
+  height: 57px;
+  background-color: rgba(72, 60, 96, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.menu-icon {
+  display: flex;
+  gap: 3px;
+  flex-direction: column;
+}
+
+.menu-line {
+  width: 44px;
+  height: 6px;
+  border-radius: 8px;
+  background-color: #34114c;
+}
+
+.timestamp {
+  font-size: 15px;
+  color: #ffffff;
+}
